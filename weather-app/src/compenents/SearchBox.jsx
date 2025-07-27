@@ -3,12 +3,12 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import "./SearchBox.css";
 
+
 export default function SearchBox({ updateWeatherData }) {
   let [city, setCity] = useState("");
   let [error, setError] = useState(false);
   const API_URL = "http://api.openweathermap.org/data/2.5/weather";
-  const API_KEY = "a266f179ce9ada8e6600e8a77a7a27f2";
-
+  const API_KEY = import.meta.env.VITE_API_KEY;
   let fetchWeatherData = async () => {
     try {
       let response = await fetch(
